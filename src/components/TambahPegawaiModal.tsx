@@ -18,20 +18,17 @@ import {
   Textarea,
   useDisclosure,
 } from "@chakra-ui/react";
+import { Plus } from "@phosphor-icons/react";
 import React from "react";
+import { iconSize } from "../const/sizes";
 import useBackOnClose from "../utils/useBackOnClose";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import RequiredForm from "./RequiredForm";
 import { PencilSimpleLine } from "@phosphor-icons/react";
-import { iconSize } from "../const/sizes";
 import PasswordInput from "./PasswordInput";
 
-type Props = {
-  id: string;
-};
-
-export default function UbahPegawaiModal({ id }: Props) {
+export default function TambahPegawaiModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   useBackOnClose(isOpen, onClose);
   const handleOnClose = () => {
@@ -39,18 +36,16 @@ export default function UbahPegawaiModal({ id }: Props) {
     window.history.back();
   };
 
-  //   TODO get data update
   const formik = useFormik({
     validateOnChange: false,
 
     initialValues: {
-      id: id,
-      username: "panjulisme",
-      kataSandi: "panjul123",
-      namaLengkap: "Panjul Simonsely",
-      email: "panjul@email.com",
-      nomorPonsel: "084712876357",
-      alamat: "Jalan kenangan mantan",
+      username: "",
+      kataSandi: "",
+      namaLengkap: "",
+      email: "",
+      nomorPonsel: "",
+      alamat: "",
     },
 
     validationSchema: yup.object().shape({
@@ -70,12 +65,17 @@ export default function UbahPegawaiModal({ id }: Props) {
 
   return (
     <>
-      <MenuItem onClick={onOpen}>
-        <HStack>
-          <Icon as={PencilSimpleLine} fontSize={iconSize} />
-          <Text>Ubah</Text>
-        </HStack>
-      </MenuItem>
+      <Button
+        flexShrink={0}
+        leftIcon={<Icon as={Plus} fontSize={iconSize} />}
+        pl={3}
+        pr={[1, 4]}
+        colorScheme="ap"
+        className="lg-clicky"
+        onClick={onOpen}
+      >
+        <Text display={["none", "block"]}>Tambah Pegawai</Text>
+      </Button>
 
       <Modal isOpen={isOpen} onClose={handleOnClose}>
         <ModalOverlay />
@@ -83,10 +83,10 @@ export default function UbahPegawaiModal({ id }: Props) {
         <ModalContent>
           <ModalCloseButton />
 
-          <ModalHeader>Ubah Pegawai</ModalHeader>
+          <ModalHeader>Tambah Pegawai</ModalHeader>
 
           <ModalBody>
-            <form id="ubahPegawaiForm" onSubmit={formik.handleSubmit}>
+            <form id="tambahPegawaiForm" onSubmit={formik.handleSubmit}>
               <FormControl
                 mb={4}
                 isInvalid={formik.errors.username ? true : false}
@@ -190,7 +190,7 @@ export default function UbahPegawaiModal({ id }: Props) {
           <ModalFooter>
             <Button
               type="submit"
-              form="ubahPegawaiForm"
+              form="tambahPegawaiForm"
               colorScheme="ap"
               className="lg-clicky"
             >

@@ -16,6 +16,7 @@ import { CaretLeft, CaretRight, MagnifyingGlass } from "@phosphor-icons/react";
 import { iconSize } from "../const/sizes";
 import SortTabelPegawai from "../components/SortTabelPegawai";
 import TabelPegawai from "../components/TabelPegawai";
+import TambahPegawaiModal from "../components/TambahPegawaiModal";
 
 export default function PenggunaPegawai() {
   const bg = useColorModeValue("white", "dark");
@@ -41,6 +42,8 @@ export default function PenggunaPegawai() {
           </InputGroup>
 
           <SortTabelPegawai />
+
+          <TambahPegawaiModal />
         </HStack>
 
         <TabelPegawai />
