@@ -19,7 +19,7 @@ import * as yup from "yup";
 import axios from "axios";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
 import { setCookie } from "typescript-cookie";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Landing() {
   const [loading, setLoading] = useState(false);
@@ -147,6 +147,8 @@ export default function Landing() {
           isLoading={loading}
           type="submit"
           form="signinForm"
+          as={Link}
+          to={"/dashboards"}
         >
           Masuk
         </Button>
