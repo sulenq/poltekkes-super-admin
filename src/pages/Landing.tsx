@@ -19,17 +19,17 @@ import * as yup from "yup";
 import axios from "axios";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
 import { setCookie } from "typescript-cookie";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Landing() {
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const formik = useFormik({
     validateOnChange: false,
 
     initialValues: {
       username: "",
       password: "",
-      isAdmin: false,
     },
 
     validationSchema: yup.object().shape({
@@ -56,12 +56,7 @@ export default function Landing() {
         try {
           const response = await axios.request(options);
           setCookie("userData", JSON.stringify(response.data.data));
-
-          // if (values.isAdmin) {
-          //   navigate("/admin");
-          // } else {
-          //   navigate("/customer");
-          // }
+          navigate("/dashboards");
         } catch (error) {
           console.log(error);
           // alert("Something wrong, try refreshing the page  or comeback later");
@@ -150,8 +145,8 @@ export default function Landing() {
           className="lg-clicky"
           colorScheme="ap"
           isLoading={loading}
-          as={Link}
-          to={"/dashboards"}
+          type="submit"
+          form="signinForm"
         >
           Masuk
         </Button>
