@@ -69,7 +69,7 @@ export default function AdminContainer({ children, active }: Props) {
                   </HStack>
                 </MenuButton>
 
-                <MenuList minW={"126px"} border={"none"}>
+                <MenuList minW={"178px"} border={"none"}>
                   <MenuItem
                     bg={buttonBg}
                     color={buttonColor}
