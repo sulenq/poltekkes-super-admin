@@ -3,6 +3,7 @@ import { DotsThreeVertical } from "@phosphor-icons/react";
 import React from "react";
 import { iconSize } from "../const/sizes";
 import UbahPegawaiModal from "./UbahPegawaiModal";
+import HapusPegawaiModal from "./HapusPegawaiModal";
 
 type Props = {
   id: string;
@@ -23,7 +24,7 @@ export default function TabelPegawaiAksi({ id }: Props) {
       <MenuList minW={"140px"}>
         <UbahPegawaiModal id={id} />
 
-        {/* <DeleteProdukModal id={id} /> */}
+        <HapusPegawaiModal id={id} />
       </MenuList>
     </Menu>
   );
