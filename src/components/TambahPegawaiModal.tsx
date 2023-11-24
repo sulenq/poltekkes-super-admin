@@ -3,10 +3,8 @@ import {
   FormControl,
   FormErrorMessage,
   FormLabel,
-  HStack,
   Icon,
   Input,
-  MenuItem,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -25,7 +23,6 @@ import useBackOnClose from "../utils/useBackOnClose";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import RequiredForm from "./RequiredForm";
-import { PencilSimpleLine } from "@phosphor-icons/react";
 import PasswordInput from "./PasswordInput";
 
 export default function TambahPegawaiModal() {

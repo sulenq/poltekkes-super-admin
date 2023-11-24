@@ -25,6 +25,7 @@ type Props = {
 };
 
 export default function AdminContainer({ children, active }: Props) {
+  //TODO get user data
   const contentBg = useColorModeValue("var(--divider)", "#111827");
   const sw = useScreenWidth();
 
@@ -62,7 +63,7 @@ export default function AdminContainer({ children, active }: Props) {
                   <HStack borderRadius={8} p={2} cursor={"pointer"}>
                     <Icon as={CaretDown} fontSize={iconSize} />
 
-                    <Text>Admin</Text>
+                    <Text>Super Admin</Text>
 
                     <Avatar name="Jolitos Kurniawan" size={"xs"} />
                   </HStack>
