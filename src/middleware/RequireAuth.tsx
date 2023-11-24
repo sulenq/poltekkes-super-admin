@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import FullPageLogo from "../components/FullPageLogo";
-import { getCookie } from "typescript-cookie";
-import { useNavigate } from "react-router-dom";
+// import React, { useState, useEffect } from "react";
+// import FullPageLogo from "../components/FullPageLogo";
+// import { getCookie } from "typescript-cookie";
+// import { useNavigate } from "react-router-dom";
 
 type Props = { children: JSX.Element };
 
