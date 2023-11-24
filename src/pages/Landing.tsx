@@ -19,6 +19,7 @@ import * as yup from "yup";
 import axios from "axios";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
 import { setCookie } from "typescript-cookie";
+import { Link } from "react-router-dom";
 
 export default function Landing() {
   const [loading, setLoading] = useState(false);
@@ -149,6 +150,8 @@ export default function Landing() {
           className="lg-clicky"
           colorScheme="ap"
           isLoading={loading}
+          as={Link}
+          to={"/dashboards"}
         >
           Masuk
         </Button>
