@@ -44,7 +44,7 @@ export default function AdminNav({ active }: Props) {
   if (sw < 770) {
     return (
       <SimpleGrid
-        columns={4}
+        columns={2}
         h={"60px"}
         bg={navBg}
         position={"fixed"}
